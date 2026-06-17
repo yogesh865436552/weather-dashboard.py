@@ -1,0 +1,6 @@
+# This project is a frontend-only weather dashboard.
+# There are no Python dependencies required to run this app.
+# Use any static web server to serve the files locally:
+#   python3 -m http.server 8000
+#   npx http-server
+#   live-server

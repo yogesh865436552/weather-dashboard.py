@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ionicons Link for Sleek UI Graphics -->
+    <script type="module" src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Control Header Navbar -->
+        <header class="controls-header">
+            <div class="search-wrapper">
+                <ion-icon name="search-outline" class="search-icon"></ion-icon>
+                <input type="text" id="city-search" placeholder="Search global cities..." autocomplete="off">
+                <button id="search-btn">Search</button>
+            </div>
+            <div class="action-buttons">
+                <button id="geo-btn" title="Use Current Location">
+                    <ion-icon name="locate-outline"></ion-icon>
+                </button>
+                <button id="theme-toggle" title="Toggle UI Theme">
+                    <ion-icon name="moon-outline" id="theme-icon"></ion-icon>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dynamic Feedback States -->
+        <div id="loading-state" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Fetching local climates...</p>
+        </div>
+        <div id="error-state" class="error-card hidden">
+            <ion-icon name="alert-circle-outline"></ion-icon>
+            <p id="error-message">City target not identified. Try again.</p>
+        </div>
+
+        <!-- Main Dashboard Workspace Display -->
+        <main id="weather-content" class="main-layout">
+            <!-- Hero Card Profile Elements -->
+            <section class="hero-weather-card">
+                <div class="hero-meta">
+                    <h1 id="location-name">Paris, FR</h1>
+                    <p id="current-date">Tuesday, June 16</p>
+                </div>
+                <div class="hero-display">
+                    <img id="weather-hero-icon" src="https://openweathermap.org/img/wn/04d@4x.png" alt="Weather condition display status">
+                    <div class="temp-box">
+                        <span id="main-temperature">22</span><span class="degree-symbol">°C</span>
+                    </div>
+                    <h3 id="weather-description">Scattered Showers</h3>
+                </div>
+            </section>
+
+            <!-- Grid Details Analytics Framework -->
+            <section class="metrics-grid">
+                <div class="metric-item-card">
+                    <ion-icon name="thermometer-outline" class="metric-accent"></ion-icon>
+                    <div>
+                        <p class="metric-label">Feels Like</p>
+                        <h4 id="feels-like-val">24°C</h4>
+                    </div>
+                </div>
+                <div class="metric-item-card">
+                    <ion-icon name="water-outline" class="metric-accent"></ion-icon>
+                    <div>
+                        <p class="metric-label">Humidity</p>
+                        <h4 id="humidity-val">64%</h4>
+                    </div>
+                </div>
+                <div class="metric-item-card">
+                    <ion-icon name="leaf-outline" class="metric-accent"></ion-icon>
+                    <div>
+                        <p class="metric-label">Wind Speed</p>
+                        <h4 id="wind-val">12 km/h</h4>
+                    </div>
+                </div>
+                <div class="metric-item-card">
+                    <ion-icon name="speedometer-outline" class="metric-accent"></ion-icon>
+                    <div>
+                        <p class="metric-label">Pressure</p>
+                        <h4 id="pressure-val">1015 hPa</h4>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
